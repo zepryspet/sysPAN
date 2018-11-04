@@ -1,0 +1,2 @@
+register user:user1 ip:1.1.1.1
+register user:user2 ip:2.2.2.2
