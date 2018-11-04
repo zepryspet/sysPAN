@@ -1,19 +1,24 @@
 Script that reads the text file "logs.txt" (must be in the same directory as the script) and sends each text line to the Palo Alto Networks user ID agent (either firewall or standalone agent) for user to IP parsing using either UDP or TLS as transport layer.
+https://www.paloaltonetworks.com/documentation/71/pan-os/pan-os/user-id/configure-user-id-to-receive-user-mappings-from-a-syslog-sender
+
 Note: Syslog server certificate is not validated. Designed for testing ONLY!
 ___
 Usage:
 
 for udp
-
+```
 ./sysPAN -tr=udp -ip=<Agent IP address>
-
+```
 for TLS
-
+```
 ./sysPAN -tr=tls -ip=<Agent IP address>
-
+```
 if no arguments are provided it'll use UDP as a transport mechanism and send the syslog to ip address 192.168.1.1
+
 ___
+
 Debugging in firewall:
+
 FW> debug user-id set userid syslog
 
 Debug level is info
